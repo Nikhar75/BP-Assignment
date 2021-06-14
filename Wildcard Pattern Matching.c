@@ -5,7 +5,6 @@
  
 #define Len 100
  
-// Create a DP lookup table
 int lookup[Len][Len];
  
 // Function that matches an input string with a given wildcard pattern
