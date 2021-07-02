@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Table exercise</title>
+
+    <style>
+        table {
+            width: 100%;
+            background: #FFFAFA;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .rows {
+            background: #D3D3D3;
+        }
+        
+        .top-heading {
+            background: #C0C0C0;
+            text-align: center;
+        }
+        
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+            border-bottom: 0.5px solid #000;
+        }
+    </style>
+
+</head>
+
+<body>
+	<h1>INVOICE TABLE</h1>
+      <p style="text-align:center;"></p>
+
+    <table>
+        <tr>
+            <th class="top-heading" colspan="4">A complex table</th>
+        </tr>
+        <tr class="rows">
+            <td colspan="3">Invoice #165</td>
+            <td><b>Date : 2 july 2021</b></td>
+        </tr>
+        <tr>
+            <td><b>Pay To:</b><br>Tata Group<br>123 Shivaji Nagar<br>Mumbai,440001</td>
+            <td colspan="3"><b>Customer:</b><br>David Miller<br>123 LA Street<br>South Africa MA 54321</td>
+        </tr>
+        <tr class="rows">
+            <th>Name/Description</th>
+            <th>Qty.</th>
+            <th>@</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+            <td>Paperclips</td>
+            <td>5000</td>
+            <td>0.01</td>
+            <td>50$</td>
+        </tr>
+        <tr>
+            <td>Staples(box)</td>
+            <td>100</td>
+            <td>2.00</td>
+            <td>200$</td>
+        </tr>
+        <tr>
+            <td class="rows" colspan="3"><b>Subtotal<b></td>
+            <td>250$</td>
+        </tr>
+        <tr>
+            <td class="rows" colspan="2"><b>tax</b></td>
+            <td>8%</td>
+            <td>20$</td>
+        </tr>
+        <tr>
+            <td class="rows" colspan="3"><b>Grand Total</b></td>
+            <td>270$</td>
+        </tr>
+    </table>
+</body>
+
+</html>
