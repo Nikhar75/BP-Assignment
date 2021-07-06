@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      table,
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+	table {
+            width: 100%;
+            background-color: #f1f1c1;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        table th {
+            color: white;
+            background-color: black;
+        }
+    </style>
+     <script type="text/javascript">
+        function func() {
+            var book_id = document.getElementById("textbox").value;
+            console.log(book_id);
+            var x = document.getElementById("tableData").rows[book_id].innerHTML;
+            console.log(x);
+            document.getElementById("book_id").innerHTML = x;
+        }
+    </Script>
+  </head>
+  
+<body>
+<h2>Book Management System</h2>
+
+<p>Click below button for  Ascending Order</p>
+<p><button onclick="sortTableAscending()">Ascending Sort</button></p>
+<p>Click below button for  Descending Order</p>
+<p><button onclick="sortTableDescending()">Descending Sort</button></p>
+
+<script>
+function sortTableAscending() {
+  var table, rows, swap, i, x, y, shouldSwap;
+  table = document.getElementById("myTable");
+  swap = true;
+  
+  while (swap) {
+    swap = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwap = false;
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        shouldSwap = true;
+        break;
+      }
+    }
+    if (shouldSwap) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      swap = true;
+    }
+  }
+}
+</script>
+
+<script>
+function sortTableDescending() {
+  var table, rows, swap, i, x, y, shouldSwap;
+  table = document.getElementById("myTable");
+  swap = true;
+  
+  while (swap) {
+    swap = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwap = false;
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) { 
+        shouldSwap = true;
+        break;
+      }
+    }
+    if (shouldSwap) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      swap = true;
+    }
+  }
+}
+</script>
+
+<table id="myTable" cellpadding="10"cellspacing="0" >
+
+<tr style="text-align:left" bgcolor="#F0F0F0">
+ 
+<th><b>Book Name<b></th>
+    <th><b>Author<b></th>
+    <th><b>No. Of Books<b></th>
+    <th><b>Price Of Book<b></th>
+  </th>
+  <tr>
+    <td>The Art Of War</td>
+    <td>Sun Tzu</td>
+    <td>8</td>
+    <td>199</td>
+  </tr>
+  <tr>
+    <td>A Room of One's Own</td>
+    <td>Virginia Woolf</td>
+    <td>6</td>
+    <td>179</td>
+  </tr>
+  <tr>
+    <td>The Elements of Style</td>
+    <td>William Strunk</td>
+    <td>2</td>
+    <td>250</td>
+  </tr>
+  <tr>
+    <td>Jim The Boy</td>
+    <td>Tony Earley</td>
+    <td>5</td>
+    <td>130</td>
+  </tr>
+  <tr>
+    <td>Poke the Box</td>
+    <td>Seth Godin</td>
+    <td>3</td>
+    <td>185</td>
+  </tr>
+  <tr>
+    <td>Zero Minus Ten</td>
+    <td>Raymond Benson</td>
+    <td>6</td>
+    <td>265</td>
+  </tr>
+</table>
+</body>
+</html>
