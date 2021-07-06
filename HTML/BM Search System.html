@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>Book Library</title>
+    <style>
+        table,
+        th,
+        td {
+            padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        
+        table {
+            width: 100%;
+            background-color: #f1f1c1;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        table th {
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <script type="text/javascript">
+        function func() {
+            var book_id = document.getElementById("textbox").value;
+            console.log(book_id);
+            var x = document.getElementById("tableData").rows[book_id].innerHTML;
+            console.log(x);
+            document.getElementById("book_id").innerHTML = x;
+        }
+    </Script>
+</head>
+
+<body>
+    <table id="tableData">
+        <caption>
+            <b>Book Managemanet</b>
+        </caption>
+  <tr>
+    <td><b>Sr. Number<b></td>
+    <td><b>Book Name<b></td>
+    <td><b>Author<b></td>
+    <td><b>No. Of Books<b></td>
+    <td><b>Price Of Book<b></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>The Art Of War</td>
+    <td>Sun Tzu</td>
+    <td>8</td>
+    <td>199</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>A Room of One's Own</td>
+    <td>Virginia Woolf</td>
+    <td>6</td>
+    <td>179</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>The Elements of Style</td>
+    <td>William Strunk</td>
+    <td>2</td>
+    <td>250</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>The Heart of Haiku</td>
+    <td>Jane Hirshfield</td>
+    <td>5</td>
+    <td>130</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Poke the Box</td>
+    <td>Seth Godin</td>
+    <td>3</td>
+    <td>185</td>
+  </tr>
+</table>
+	<p>Enter the book ID</p>
+    <input type="text" id="textbox" />
+    <button title="submit" id="button" onclick="func()">submit</button>
+    <p id="book_id"></p>
+</body>
+</html>
