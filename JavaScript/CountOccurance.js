@@ -1,3 +1,11 @@
-var temp = "It is a good day.";
-var count = (temp.match(/a/g) || []).length;
-console.log(count);
+function count(str) {
+    var obj = {};
+    
+    str.split(" ").forEach(function(el, i, arr) {
+      obj[el] = obj[el] ? ++obj[el] : 1;
+    });
+    
+    return obj;
+  }
+  
+  console.log(count("Welcome to Bluepineapple."));
