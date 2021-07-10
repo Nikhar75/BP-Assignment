@@ -1,16 +1,16 @@
 // Function that returns true if the queen can attack the opponent
-function canQueenAttack(qR, qC, oR, oC)
+function canQueenAttack(qB, qW, oB, oW)
 {
 	// If queen and the opponent are in the same row
-	if (qR == oR)
+	if (qB == oB)
 		return true;
 
 	// If queen and the opponent are in the same column
-	if (qC == oC)
+	if (qW == oW)
 		return true;
 
 	// If queen can attack diagonally
-	if (Math.abs(qR - oR) == Math.abs(qC - oC))
+	if (Math.abs(qB - oB) == Math.abs(qW - oW))
 		return true;
 
 	// Opponent is safe
@@ -19,11 +19,11 @@ function canQueenAttack(qR, qC, oR, oC)
 
 // Driver code
 
-	var qR = 1, qC = 1;
-	var oR = 3, oC = 2;
+	var qB = 1, qW = 1;
+	var oB = 3, oW = 2;
 	
 	
-	if (canQueenAttack(qR, qC, oR, oC))
+	if (canQueenAttack(qB, qW, oB, oW))
 		console.log("True");
 	else
 		console.log("False");
