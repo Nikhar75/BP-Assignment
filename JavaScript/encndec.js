@@ -1,37 +1,51 @@
-var caesarShift = function (str, amount) {
-  // Wrap the amount
-  if (amount < 0) {
-    return caesarShift(str, amount + 26);
-  }
-
-  // Make an output variable
-  var output = "";
-
-  // Go through each character
-  for (var i = 0; i < str.length; i++) {
-    // Get the character we'll be appending
-    var c = str[i];
-
-    // If it's a letter...
-    if (c.match(/[a-z]/i)) {
-      // Get its code
-      var code = str.charCodeAt(i);
-
-      // Uppercase letters
-      if (code >= 65 && code <= 90) {
-        c = String.fromCharCode(((code - 65 + amount) % 26) + 65);
-      }
-
-      // Lowercase letters
-      else if (code >= 97 && code <= 122) {
-        c = String.fromCharCode(((code - 97 + amount) % 26) + 97);
-      }
+function encrpt(str, key) {
+    if (key < 0) {
+        return encrpt(str, key + 26);
     }
 
-    // Append
-    output += c;
-  }
+    var encrpt_msg = "";
+    for (var i = 0; i < str.length; i++) {
 
-  // All done!
-  return output;
-};
+        var ch = str[i];
+
+        if (ch.match(/[a-z]/i)) {
+            var code = str.charCodeAt(i);
+
+            if (code >= 65 && code <= 90) {
+                ch = String.fromCharCode(((code - 65 + key) % 26) + 65);
+            } else if (code >= 97 && code <= 122) {
+                ch = String.fromCharCode(((code - 97 + key) % 26) + 97);
+            }
+        }
+        encrpt_msg += ch;
+    }
+    return encrpt_msg;
+}
+
+function decrypt(str, key) {
+    if (key < 0) {
+        return decrypt(str, key + 26);
+    }
+
+    var decrypt_msg = "";
+    for (var i = 0; i < str.length; i++) {
+
+        var ch = str[i];
+
+        if (ch.match(/[a-z]/i)) {
+            var code = str.charCodeAt(i);
+
+            if (code >= 65 && code <= 90) {
+                ch = String.fromCharCode(((code - 65 - key) % 26) + 65);
+            } else if (code >= 97 && code <= 122) {
+                ch = String.fromCharCode(((code - 97 - key) % 26) + 97);
+            }
+        }
+        decrypt_msg += ch;
+    }
+    return decrypt_msg;
+}
+
+
+console.log("Encrypted message : " + encrpt("HELLO", 4));
+console.log("Decrypted message : " + decrypt("LIPPS", 4));
